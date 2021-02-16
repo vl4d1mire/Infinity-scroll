@@ -4,7 +4,7 @@ const loader = document.querySelector('#loader')
 let photosArray = []
 let ready = false
 let imagesLoaded = 0
-let totalImage = 0
+let totalImages = 0
 let initialCount = 5
 let isInitialCount = true
 
@@ -17,7 +17,7 @@ function updateAPIURLWithNewCount(picCount) {
 
 function imageLoaded() {
     imagesLoaded++
-    if (imagesLoaded === totalImage) {
+    if (imagesLoaded === totalImages) {
         ready = true
         loader.hidden = true
     }
@@ -31,7 +31,7 @@ function setAttributes(element, attributes) {
 
 function displayPhotos() {
     imagesLoaded = 0
-    totalImage = photosArray.length
+    totalImages = photosArray.length
 
     photosArray.forEach(photo => {
         const item = document.createElement('a')
